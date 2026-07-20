@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Encrypted System Clipboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+
+    <h1 class="main-title">
+      Encrypted System Clipboard for Sensitive Data
+    </h1>
+
+    <!-- SECRET KEY -->
+    <div class="section">
+      <label>Secret Key</label>
+      <input
+        type="password"
+        id="keyInput"
+        placeholder="Enter secret encryption key"
+      />
+    </div>
+
+    <!-- INPUT -->
+    <div class="section">
+      <label>Input (Plain / Encrypted)</label>
+      <textarea
+        id="dataInput"
+        placeholder="Enter sensitive data to encrypt OR paste encrypted data to decrypt"
+      ></textarea>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="button-group">
+      <button class="btn primary" onclick="encryptData()">Encrypt</button>
+      <button class="btn primary" onclick="decryptData()">Decrypt</button>
+      <button class="btn danger" onclick="location.reload()">Clear</button>
+    </div>
+
+    <!-- ENCRYPTED DATA -->
+    <div class="section">
+      <label>Encrypted Data</label>
+      <textarea
+        id="encryptedOutput"
+        readonly
+        placeholder="Encrypted output appears here"
+      ></textarea>
+      <button class="btn secondary" onclick="copyEncrypted()">
+        Copy Encrypted
+      </button>
+    </div>
+
+    <!-- DECRYPTED DATA -->
+    <div class="section">
+      <label>Decrypted Output</label>
+      <textarea
+        id="decryptedOutput"
+        readonly
+        placeholder="Decrypted output appears here"
+      ></textarea>
+    </div>
+
+    <!-- STATUS -->
+    <div id="status" class="status">
+      Ready
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
